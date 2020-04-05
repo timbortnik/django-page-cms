@@ -11,6 +11,7 @@ class PageTemplatesLoadingCheckTestCase(TestCase):
         with self.settings(PAGE_TEMPLATES=[unexistant]):
             errors = page_templates_loading_check([])
 
+
         self.assertEqual(errors, [Warning(
             'Django cannot find template does_not_exists.html',
             obj=unexistant, id='pages.W001')])
